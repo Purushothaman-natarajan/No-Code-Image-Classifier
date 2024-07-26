@@ -42,7 +42,7 @@ Use the `run_and_setup` script to set up and open the Gradio-based interface, wh
    Execute the run.py script to install dependencies and start the Gradio interface:
 
    ```sh 
-   python run.py
+   python interface.py
    ```
    This script will:
    - Check if requirements.txt exists.
