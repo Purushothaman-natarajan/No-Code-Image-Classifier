@@ -1,10 +1,15 @@
 # No-Code Image Classifier
 
-This project provides a no-code image classification interface using Gradio, TensorFlow framework for Deep learning. The `run.py` script ensures that all dependencies are installed and then starts the Gradio interface for interacting with the image classification models.
+This project provides a no-code interface for developing image classification models using the TensorFlow framework. 
+Use the `run_and_setup` script to set up and open the Gradio-based interface, which simplifies the process of developing and testing image classification models.
 
 ## Project Structure
 
 - `interface.py`: The Gradio interface script that provides a web interface for data loading, training, testing, and prediction.
+- `data_loader.py`: Processes and splits data into training, testing, and validation sets. It also performs data augmentation if enabled by the user.
+- `test.py`: Contains functions for evaluating the trained model on test data and generating performance metrics.
+- `train.py`: Includes the logic for training the image classification model, including data preprocessing, model training, and saving the trained model.
+- `predict.py`: Handles the prediction process, allowing the model to make predictions on new, unseen images.
 - `requirements.txt`: Lists all the required Python packages for the project.
 - `run.py`: A setup script that installs dependencies from `requirements.txt` and starts the Gradio interface.
 
