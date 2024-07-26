@@ -21,7 +21,7 @@ This project provides a no-code image classification interface using Gradio, Ten
    If you haven’t already, clone the repository to your local machine:
 
    ```sh
-   git clone (https://github.com/Purushothaman-natarajan/No-Code-Image-Classifier)
+   git clone https://github.com/Purushothaman-natarajan/No-Code-Image-Classifier
    cd No-Code-Image-Classifier
    ```
 2. **Create a Virtual Environment (Optional but Recommended)**
@@ -39,4 +39,27 @@ This project provides a no-code image classification interface using Gradio, Ten
    ```sh 
    python run.py
    ```
+   This script will:
+   - Check if requirements.txt exists.
+   - Install any missing dependencies listed in requirements.txt.
+   - Run the interface.py script to start the Gradio interface.
 
+4. **Access the Gradio Interface**
+
+Once the Gradio interface is running, you will see a URL in the terminal. Open this URL in your web browser to access the no-code image classifier interface.
+
+## Using the Gradio Interface
+- Data Loader: Upload images and specify settings for data augmentation and splits.
+- Training: Configure and start model training with various parameters.
+- Testing: Test models with uploaded images or directories of images.
+- Prediction: Make predictions on new images using the trained models.
+
+## Troubleshooting
+- Dependencies Issues: If you encounter issues with installing dependencies, ensure you have the correct version of Python and try running the run.py script again.
+- Script Errors: If you encounter errors while running interface.py, check the script for any missing or misconfigured paths.
+
+## Contributing
+- Feel free to fork the repository and submit pull requests. For any issues or feature requests, please open an issue on the GitHub repository.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
