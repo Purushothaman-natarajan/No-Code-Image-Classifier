@@ -1,0 +1,2 @@
+Base Models,Shape,Data Path (Path to file),Log Directory (Path to directory),Model Directory (Path to directory),Epochs,Optimizer,Learning Rate,Batch Size,output,flag,username,timestamp
+"[""VGG16""]",224 224 3,"""C:\Users\purus\Music\TGT""","""C:\Users\purus\Music\TGT""","""C:\Users\purus\Music\TGT""",100,adam,0.0001,32,,,,2024-07-27 02:01:32.827485
