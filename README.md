@@ -1,1 +1,65 @@
-# No-Code-Image-Classifier
+# No-Code Image Classifier
+
+This project provides a no-code image classification interface using Gradio, TensorFlow framework for Deep learning. The `run.py` script ensures that all dependencies are installed and then starts the Gradio interface for interacting with the image classification models.
+
+## Project Structure
+
+- `interface.py`: The Gradio interface script that provides a web interface for data loading, training, testing, and prediction.
+- `requirements.txt`: Lists all the required Python packages for the project.
+- `run.py`: A setup script that installs dependencies from `requirements.txt` and starts the Gradio interface.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.6 or higher
+
+### Setup and Run
+
+1. **Clone the Repository**
+
+   If you haven’t already, clone the repository to your local machine:
+
+   ```sh
+   git clone https://github.com/Purushothaman-natarajan/No-Code-Image-Classifier
+   cd No-Code-Image-Classifier
+   ```
+2. **Create a Virtual Environment (Optional but Recommended)**
+
+   It’s a good practice to use a virtual environment to manage your project's dependencies:
+
+   ```sh 
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+3. **Run the Setup Script**
+
+   Execute the run.py script to install dependencies and start the Gradio interface:
+
+   ```sh 
+   python run.py
+   ```
+   This script will:
+   - Check if requirements.txt exists.
+   - Install any missing dependencies listed in requirements.txt.
+   - Run the interface.py script to start the Gradio interface.
+
+4. **Access the Gradio Interface**
+
+Once the Gradio interface is running, you will see a URL in the terminal. Open this URL in your web browser to access the no-code image classifier interface.
+
+## Using the Gradio Interface
+- Data Loader: Upload images and specify settings for data augmentation and splits.
+- Training: Configure and start model training with various parameters.
+- Testing: Test models with uploaded images or directories of images.
+- Prediction: Make predictions on new images using the trained models.
+
+## Troubleshooting
+- Dependencies Issues: If you encounter issues with installing dependencies, ensure you have the correct version of Python and try running the run.py script again.
+- Script Errors: If you encounter errors while running interface.py, check the script for any missing or misconfigured paths.
+
+## Contributing
+- Feel free to fork the repository and submit pull requests. For any issues or feature requests, please open an issue on the GitHub repository.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
