@@ -3,7 +3,18 @@ import subprocess
 
 # Utility function to strip quotes from paths
 def strip_quotes(path):
-    return path.strip('\'\"') if path else ""
+    if isinstance(path, str):
+        return path.strip('\'\"')
+
+# Utility function to run a command and handle errors
+def run_command(command):
+    try:
+        result = subprocess.run(command, capture_output=True, text=True, encoding='utf-8')
+        if result.returncode != 0:
+            return f"Error: {result.stderr}"
+        return result.stdout
+    except Exception as e:
+        return f"Exception occurred: {str(e)}"
 
 # Define wrapper functions for each script
 def run_data_loader(path, target_folder, dim, batch_size, num_workers, augment_data):
@@ -22,15 +33,15 @@ def run_data_loader(path, target_folder, dim, batch_size, num_workers, augment_d
     if augment_data:
         command.append("--augment_data")
     
-    result = subprocess.run(command, capture_output=True, text=True)
-    return result.stdout if result.returncode == 0 else f"Error: {result.stderr}"
+    return run_command(command)
 
 def run_train(base_models, shape, data_path, log_dir, model_dir, epochs, optimizer, learning_rate, batch_size):
-    # Validate base models selection
     if not base_models:
         return "Error: You must select at least one base model for training."
 
-    # Split the shape string into individual integers
+    if not shape or not data_path or not log_dir or not model_dir:
+        return "Error: Shape, data path, log directory, and model directory are required."
+
     try:
         shape_values = list(map(int, shape.split()))
         if len(shape_values) != 3:
@@ -56,11 +67,7 @@ def run_train(base_models, shape, data_path, log_dir, model_dir, epochs, optimiz
         "--batch_size", str(batch_size)
     ]
     
-    # Ensure all elements in the command are strings
-    command = [str(arg) if arg is not None else "" for arg in command]
-    
-    result = subprocess.run(command, capture_output=True, text=True)
-    return result.stdout if result.returncode == 0 else f"Error: {result.stderr}"
+    return run_command(command)
 
 def run_test(model_path, model_dir, img_path, log_dir, test_dir, train_dir, class_names):
     # Strip quotes from paths
@@ -88,11 +95,7 @@ def run_test(model_path, model_dir, img_path, log_dir, test_dir, train_dir, clas
     if class_names:
         command.extend(["--class_names"] + class_names.split(","))
     
-    # Ensure all elements in the command are strings
-    command = [str(arg) if arg is not None else "" for arg in command]
-    
-    result = subprocess.run(command, capture_output=True, text=True)
-    return result.stdout if result.returncode == 0 else f"Error: {result.stderr}"
+    return run_command(command)
 
 def run_predict(model_path, img_path, train_dir):
     # Strip quotes from paths
@@ -107,11 +110,7 @@ def run_predict(model_path, img_path, train_dir):
         "--train_dir", train_dir
     ]
     
-    # Ensure all elements in the command are strings
-    command = [str(arg) if arg is not None else "" for arg in command]
-    
-    result = subprocess.run(command, capture_output=True, text=True)
-    return result.stdout if result.returncode == 0 else f"Error: {result.stderr}"
+    return run_command(command)
 
 # Create Gradio interfaces
 data_loader_interface = gr.Interface(
@@ -148,7 +147,7 @@ train_interface = gr.Interface(
 test_interface = gr.Interface(
     fn=run_test,
     inputs=[
-        gr.File(label="Model Path (choose model)", type="filepath"),
+        gr.Textbox(label="Model Path (Path to directory)"),
         gr.Textbox(label="Model Directory (Path to directory, optional)"),
         gr.Image(type="filepath", label="Image Path (optional, choose image)"),
         gr.Textbox(label="Log Directory (Path to directory)"),
