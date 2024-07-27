@@ -11,7 +11,6 @@ Use the `run_and_setup` script to set up and open the Gradio-based interface, wh
 - `train.py`: Includes the logic for training the image classification model, including data preprocessing, model training, and saving the trained model.
 - `predict.py`: Handles the prediction process, allowing the model to make predictions on new, unseen images.
 - `requirements.txt`: Lists all the required Python packages for the project.
-- `run.py`: A setup script that installs dependencies from `requirements.txt` and starts the Gradio interface.
 
 ## Getting Started
 
