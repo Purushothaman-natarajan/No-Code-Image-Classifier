@@ -1,7 +1,7 @@
 # No-Code Image Classifier
 
 This project provides a no-code interface for developing image classification models using the TensorFlow framework. 
-Use the `run_and_setup` script to set up and open the Gradio-based interface, which simplifies the process of developing and testing image classification models.
+Use the `setup_and_run` script to set up and open the Gradio-based interface, which simplifies the process of developing and testing image classification models.
 
 ## Prerequisites
 
@@ -40,9 +40,15 @@ Use the `run_and_setup` script to set up and open the Gradio-based interface, wh
    python -m venv venv
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
    ```
-3. **Run the Setup Script**
+3. **Run the Interface Script**
 
-   Execute the run.py script to install dependencies and start the Gradio interface:
+   Install the dependencies:
+
+   ```sh 
+   pip install -r requirements.txt 
+   ```
+      
+   Execute the interface.py script to start the Gradio interface:
 
    ```sh 
    python interface.py
@@ -52,7 +58,7 @@ Use the `run_and_setup` script to set up and open the Gradio-based interface, wh
    - Install any missing dependencies listed in requirements.txt.
    - Run the interface.py script to start the Gradio interface.
 
-4. **Access the Gradio Interface**
+5. **Access the Gradio Interface**
 
 Once the Gradio interface is running, you will see a URL in the terminal. Open this URL in your web browser to access the no-code image classifier interface.
 
