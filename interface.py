@@ -116,7 +116,7 @@ def run_predict(model_path, img_path, train_dir):
 data_loader_interface = gr.Interface(
     fn=run_data_loader,
     inputs=[
-        gr.Textbox(label="Path (Path to file)"),
+        gr.Textbox(label="Raw Dataset Path (Path to file)"),
         gr.Textbox(label="Target Folder (Path to directory)"),
         gr.Slider(minimum=1, maximum=512, value=224, label="Dimension"),
         gr.Slider(minimum=1, maximum=128, value=32, label="Batch Size"),
@@ -132,7 +132,7 @@ train_interface = gr.Interface(
     inputs=[
         gr.CheckboxGroup(["VGG16", "VGG19", "ResNet50", "ResNet101", "InceptionV3", "DenseNet121", "MobileNetV2", "Xception", "InceptionResNetV2", "EfficientNetB0"], label="Base Models"),
         gr.Textbox(value="224 224 3", label="Shape (Height Width Channels)"),
-        gr.Textbox(label="Data Path (Path to file)"),
+        gr.Textbox(label="Processed Dataset Path (Path to file)"),
         gr.Textbox(label="Log Directory (Path to directory)"),
         gr.Textbox(label="Model Directory (Path to directory)"),
         gr.Slider(minimum=1, maximum=1000, value=100, label="Epochs"),
