@@ -7,9 +7,9 @@ Use the `run_and_setup` script to set up and open the Gradio-based interface, wh
 
 ## Demo Video
 
-Watch the demo video to see how to use the no-code image classifier interface:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/znRVrnVDgD8" frameborder="0" allowfullscreen></iframe>
+<p style="text-align: center;">
+  <a href="https://www.youtube.com/watch?v=znRVrnVDgD8" target="_blank">Watch the demo video to see how to use the no-code image classifier interface.</a>
+</p>
 
 ## Project Structure
 
