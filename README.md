@@ -22,6 +22,21 @@ Use the `setup_and_run` script to set up and open the Gradio-based interface, wh
 - `predict.py`: Handles the prediction process, allowing the model to make predictions on new, unseen images.
 - `requirements.txt`: Lists all the required Python packages for the project.
 
+### Dataset Structure
+
+```sh
+├── Dataset (Raw)
+   ├── class_name_1
+   │   └── *.jpg
+   ├── class_name_2
+   │   └── *.jpg
+   ├── class_name_3
+   │   └── *.jpg
+   └── class_name_4
+       └── *.jpg
+```
+
+
 ### Setup and Run (by code)
 
 1. **Clone the Repository**
