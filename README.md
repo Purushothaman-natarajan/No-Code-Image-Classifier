@@ -1,3 +1,10 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 # No-Code Image Classifier
 
 This project provides a no-code interface for developing image classification models using the TensorFlow framework. 
@@ -8,6 +15,10 @@ Use the `setup_and_run` script to set up and open the Gradio-based interface, wh
 - Python 3.6 or higher
 
 ## Getting Started (Demo Video)
+
+<p align="center">
+  <img src="data/demo snap.png" alt="Preview">
+</p>
 
 <p style="text-align: center;">
   <a href="https://www.youtube.com/watch?v=znRVrnVDgD8" target="_blank">Watch the demo video to see how to use the no-code image classifier interface.</a>
@@ -92,3 +103,18 @@ Once the Gradio interface is running, you will see a URL in the terminal. Open t
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
+
+
+----
+[contributors-shield]: https://img.shields.io/github/contributors/Purushothaman-natarajan/No-Code-Image-Classifier.svg?style=flat-square
+[contributors-url]: https://github.com/Purushothaman-natarajan/No-Code-Image-Classifier/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Purushothaman-natarajan/No-Code-Image-Classifier.svg?style=flat-square
+[forks-url]: https://github.com/Purushothaman-natarajan/No-Code-Image-Classifier/network/members
+[stars-shield]: https://img.shields.io/github/stars/Purushothaman-natarajan/No-Code-Image-Classifier.svg?style=flat-square
+[stars-url]: https://github.com/Purushothaman-natarajan/No-Code-Image-Classifier/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Purushothaman-natarajan/No-Code-Image-Classifier.svg?style=flat-square
+[issues-url]: https://github.com/Purushothaman-natarajan/No-Code-Image-Classifier/issues
+[license-shield]: https://img.shields.io/github/license/Purushothaman-natarajan/No-Code-Image-Classifier.svg?style=flat-square
+[license-url]: https://github.com/Purushothaman-natarajan/No-Code-Image-Classifier/blob/main/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/purushothamann/
