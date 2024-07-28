@@ -1,3 +1,13 @@
+__author__ = "Purushothaman Natarajan"
+__copyright__ = "Copyright 2024, Purushothaman Natarajan"
+__credits__ = ["Purushothaman Natarajan"]
+__license__ = "MIT"
+__version__ = "V1.0"
+__maintainer__ = "Purushothaman Natarajan"
+__email__ = "purushothamanprt@gmail.com"
+__status__ = "pushed"
+
+
 import gradio as gr
 import subprocess
 
