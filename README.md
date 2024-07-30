@@ -1,13 +1,10 @@
-Here's the updated README with a Table of Contents:
-
----
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+
 
 # No-Code Image Classifier
 
@@ -175,21 +172,26 @@ The following base models are supported for training:
 Here's an example workflow that demonstrates how to use the scripts for data loading, model training, testing, and prediction.
 
 1. **Data Loading:**
-    ```sh
-    python data_loader.py --path "path/to/raw/dataset" --target_folder "path/to/target/folder" --dim 224 --batch_size 32 --num_workers 4 --augment_data
-    ```
+   - With Data Augmentation: 
+     ```sh
+      python data_loader.py --path "path/to/raw/dataset" --target_folder "path/to/target/folder" --dim 224 --batch_size 32 --num_workers 4 --augment_data
+      ```
+    - Without Data Augmentation: 
+      ```sh
+      python data_loader.py --path "path/to/raw/dataset" --target_folder "path/to/target/folder" --dim 224 --batch_size 32 --num_workers 4
+      ```
 
-2. **Model Training:**
+3. **Model Training:**
     ```sh
     python train.py --base_models "VGG16,ResNet50" --shape "224 224 3" --data_path "path/to/processed/dataset" --log_dir "path/to/log/dir" --model_dir "path/to/model/dir" --epochs 100 --optimizer "adam" --learning_rate 0.0001 --batch_size 32
     ```
 
-3. **Model Testing:**
+4. **Model Testing:**
     ```sh
-    python test.py --model_path "path/to/trained/model" --model_dir "path/to/model/dir" --img_path "path/to/test/image" --log_dir "path/to/log/dir" --test_dir "path/to/test/dir" --train_dir "path/to/train/dir" --class_names "class1,class2,class3"
+    python test.py --model_path "path/to/trained/model" --model_dir "path/to/model/dir" --img_path "path/to/test/image" --log_dir "path/to/log/dir" --test_dir "path/to/test/dir" --train_dir "path/to/train/dir"
     ```
 
-4. **Prediction:**
+5. **Prediction:**
     ```sh
     python predict.py --model_path "path/to/trained/model" --img_path "path/to/image" --train_dir "path/to/train/dir"
     ```
