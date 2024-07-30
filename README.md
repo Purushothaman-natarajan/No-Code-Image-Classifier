@@ -1,3 +1,7 @@
+Here's the updated README with a Table of Contents:
+
+---
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -7,8 +11,21 @@
 
 # No-Code Image Classifier
 
-This project provides a no-code interface for developing image classification models using the TensorFlow framework. 
-Use the `setup_and_run` script to set up and open the Gradio-based interface, which simplifies the process of developing and testing image classification models.
+This project provides a no-code interface for developing image classification models using the TensorFlow framework. Use the `setup_and_run` script to set up and open the Gradio-based interface, which simplifies the process of developing and testing image classification models.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Getting Started (Demo Video)](#getting-started-demo-video)
+- [Project Structure](#project-structure)
+- [Dataset Structure](#dataset-structure)
+- [Setup and Run (no code)](#setup-and-run-no-code)
+- [Setup and Run (by Command Line)](#setup-and-run-by-command-line)
+- [Supported Base Models](#supported-base-models)
+- [Example](#example)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Prerequisites
 
@@ -33,7 +50,7 @@ Use the `setup_and_run` script to set up and open the Gradio-based interface, wh
 - `predict.py`: Handles the prediction process, allowing the model to make predictions on new, unseen images.
 - `requirements.txt`: Lists all the required Python packages for the project.
 
-### Dataset Structure
+## Dataset Structure
 
 ```sh
 ├── Dataset (Raw)
@@ -47,8 +64,7 @@ Use the `setup_and_run` script to set up and open the Gradio-based interface, wh
        └── *.jpg
 ```
 
-
-### Setup and Run (by code)
+## Setup and Run (no code)
 
 1. **Clone the Repository**
 
@@ -58,6 +74,7 @@ Use the `setup_and_run` script to set up and open the Gradio-based interface, wh
    git clone https://github.com/Purushothaman-natarajan/No-Code-Image-Classifier
    cd No-Code-Image-Classifier
    ```
+
 2. **Create a Virtual Environment (Optional but Recommended)**
 
    It’s a good practice to use a virtual environment to manage your project's dependencies:
@@ -66,46 +83,129 @@ Use the `setup_and_run` script to set up and open the Gradio-based interface, wh
    python -m venv venv
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
    ```
+
 3. **Run the Interface Script**
 
+   Method-1:
+   Click `setup_and_run.bat`, and use default setup to start the Gradio interface.
+
+   Method-2:
    Install the dependencies:
 
    ```sh 
    pip install -r requirements.txt 
    ```
       
-   Execute the interface.py script to start the Gradio interface:
+   Execute the `interface.py` script to start the Gradio interface:
 
    ```sh 
    python interface.py
    ```
    This script will:
-   - Check if requirements.txt exists.
-   - Install any missing dependencies listed in requirements.txt.
-   - Run the interface.py script to start the Gradio interface.
+   - Run the `interface.py` script to start the Gradio interface.
 
 5. **Access the Gradio Interface**
 
-Once the Gradio interface is running, you will see a URL in the terminal. Open this URL in your web browser to access the no-code image classifier interface.
+   Once the Gradio interface is running, you will see a URL in the terminal. Open this URL in your web browser to access the no-code image classifier interface.
 
-## Using the Gradio Interface
-- Data Loader: Upload images and specify settings for data augmentation and splits.
-- Training: Configure and start model training with various parameters.
-- Testing: Test models with uploaded images or directories of images.
-- Prediction: Make predictions on new images using the trained models.
+## Setup and Run (by Command Line)
+
+1. **Clone the Repository**
+
+   If you haven’t already, clone the repository to your local machine:
+
+   ```sh
+   git clone https://github.com/Purushothaman-natarajan/No-Code-Image-Classifier
+   cd No-Code-Image-Classifier
+   ```
+
+2. **Create a Virtual Environment (Optional but Recommended)**
+
+   It’s a good practice to use a virtual environment to manage your project's dependencies:
+
+   ```sh 
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+
+3. **Install the Dependencies**
+
+   ```sh 
+   pip install -r requirements.txt 
+   ```
+
+4. **Run the Scripts**
+
+   - **Data Loading**:
+     ```sh
+     python data_loader.py --path "path/to/raw/dataset" --target_folder "path/to/target/folder" --dim 224 --batch_size 32 --num_workers 4 --augment_data
+     ```
+
+   - **Model Training**:
+     ```sh
+     python train.py --base_models "VGG16,ResNet50" --shape "224 224 3" --data_path "path/to/processed/dataset" --log_dir "path/to/log/dir" --model_dir "path/to/model/dir" --epochs 100 --optimizer "adam" --learning_rate 0.0001 --batch_size 32
+     ```
+
+   - **Model Testing**:
+     ```sh
+     python test.py --model_path "path/to/trained/model" --model_dir "path/to/model/dir" --img_path "path/to/test/image" --log_dir "path/to/log/dir" --test_dir "path/to/test/dir" --train_dir "path/to/train/dir" --class_names "class1,class2,class3"
+     ```
+
+   - **Prediction**:
+     ```sh
+     python predict.py --model_path "path/to/trained/model" --img_path "path/to/image" --train_dir "path/to/train/dir"
+     ```
+
+## Supported Base Models
+
+The following base models are supported for training:
+- VGG16
+- VGG19
+- ResNet50
+- ResNet101
+- InceptionV3
+- DenseNet121
+- MobileNetV2
+- Xception
+- InceptionResNetV2
+- EfficientNetB0
+
+## Example
+
+Here's an example workflow that demonstrates how to use the scripts for data loading, model training, testing, and prediction.
+
+1. **Data Loading:**
+    ```sh
+    python data_loader.py --path "path/to/raw/dataset" --target_folder "path/to/target/folder" --dim 224 --batch_size 32 --num_workers 4 --augment_data
+    ```
+
+2. **Model Training:**
+    ```sh
+    python train.py --base_models "VGG16,ResNet50" --shape "224 224 3" --data_path "path/to/processed/dataset" --log_dir "path/to/log/dir" --model_dir "path/to/model/dir" --epochs 100 --optimizer "adam" --learning_rate 0.0001 --batch_size 32
+    ```
+
+3. **Model Testing:**
+    ```sh
+    python test.py --model_path "path/to/trained/model" --model_dir "path/to/model/dir" --img_path "path/to/test/image" --log_dir "path/to/log/dir" --test_dir "path/to/test/dir" --train_dir "path/to/train/dir" --class_names "class1,class2,class3"
+    ```
+
+4. **Prediction:**
+    ```sh
+    python predict.py --model_path "path/to/trained/model" --img_path "path/to/image" --train_dir "path/to/train/dir"
+    ```
 
 ## Troubleshooting
-- Dependencies Issues: If you encounter issues with installing dependencies, ensure you have the correct version of Python and try running the run.py script again.
-- Script Errors: If you encounter errors while running interface.py, check the script for any missing or misconfigured paths.
+- **Dependencies Issues**: If you encounter issues with installing dependencies, ensure you have the correct version of Python and try running the `run.py` script again.
+- **Script Errors**: If you encounter errors while running `interface.py`, check the script for any missing or misconfigured paths.
 
 ## Contributing
-- Feel free to fork the repository and submit pull requests. For any issues or feature requests, please open an issue on the GitHub repository.
+Feel free to fork the repository and submit pull requests. For any issues or feature requests, please open an issue on the GitHub repository.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-
 ----
+
 [contributors-shield]: https://img.shields.io/github/contributors/Purushothaman-natarajan/No-Code-Image-Classifier.svg?style=flat-square
 [contributors-url]: https://github.com/Purushothaman-natarajan/No-Code-Image-Classifier/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Purushothaman-natarajan/No-Code-Image-Classifier.svg?style=flat-square
