@@ -140,7 +140,7 @@ This project provides a no-code interface for developing image classification mo
 
    - **Model Training**:
      ```sh
-     python train.py --base_models "VGG16,ResNet50" --shape "224 224 3" --data_path "path/to/processed/dataset" --log_dir "path/to/log/dir" --model_dir "path/to/model/dir" --epochs 100 --optimizer "adam" --learning_rate 0.0001 --batch_size 32
+     python train.py --base_models VGG16, ResNet50 --shape 224 224 3 --data_path "path/to/processed/dataset" --log_dir "path/to/log/dir" --model_dir "path/to/model/dir" --epochs 100 --optimizer adam --learning_rate 0.0001 --batch_size 32
      ```
 
    - **Model Testing**:
@@ -183,7 +183,7 @@ Here's an example workflow that demonstrates how to use the scripts for data loa
 
 3. **Model Training:**
     ```sh
-    python train.py --base_models "VGG16,ResNet50" --shape "224 224 3" --data_path "path/to/processed/dataset" --log_dir "path/to/log/dir" --model_dir "path/to/model/dir" --epochs 100 --optimizer "adam" --learning_rate 0.0001 --batch_size 32
+    python train.py --base_models VGG16,ResNet50 --shape 224 224 3 --data_path "path/to/processed/dataset" --log_dir "path/to/log/dir" --model_dir "path/to/model/dir" --epochs 100 --optimizer adam --learning_rate 0.0001 --batch_size 32
     ```
 
 4. **Model Testing:**
