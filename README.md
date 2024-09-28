@@ -13,7 +13,7 @@ This project provides a no-code interface for developing image classification mo
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Getting Started (Demo Video)](#getting-started-demo-video)
+- [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Dataset Structure](#dataset-structure)
 - [Setup and Run (no code)](#setup-and-run-no-code)
@@ -28,15 +28,12 @@ This project provides a no-code interface for developing image classification mo
 
 - Python 3.6 or higher
 
-## Getting Started (Demo Video)
+## Getting Started
 
 <p align="center">
   <img src="data/demo snap.png" alt="Preview">
 </p>
 
-<p style="text-align: center;">
-  <a href="https://www.youtube.com/watch?v=znRVrnVDgD8" target="_blank">Watch the demo video to see how to use the no-code image classifier interface.</a>
-</p>
 
 ## Project Structure
 
